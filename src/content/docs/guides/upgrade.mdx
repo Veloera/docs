@@ -1,0 +1,38 @@
+---
+title: 升级
+description: 升级 Veloera 版本
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
+
+此指南简述了如何在 Linux 上使用 docker-compose 升级 Veloera. 
+
+## 先决条件
+
+- Docker 与 docker-compose 环境. 
+
+## 部署
+
+<Steps>
+
+1. 导航到您安装 Veloera 的目录下
+
+    ```bash
+    cd Veloera
+    ```
+
+2. 拉取最新更改 <Badge text="可选但推荐" variant="note" />
+
+    您可以在此步, 按需编辑 docker-compose.yml 以符合需要.  
+    通常, 您会希望修改 container_name 字段以避免与其他容器命名冲突, 以及修改暴露的端口. 
+
+3. 升级
+
+    ```bash
+    docker-compose down
+    docker-compose pull
+    docker-compose up -d
+    ```
+
+</Steps>

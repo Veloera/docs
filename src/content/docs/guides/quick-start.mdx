@@ -1,0 +1,40 @@
+---
+title: 快速开始
+description: 快速部署 Veloera
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+此指南简述了如何在 Linux 上使用 docker-compose 部署 Veloera, 更多部署方法需参考高级部分. 
+
+## 先决条件
+
+- Docker 与 docker-compose 环境. 
+
+## 部署
+
+<Steps>
+
+1. 克隆存储库
+
+    ```bash
+    git clone https://github.com/Veloera/Veloera.git
+    cd Veloera
+    ```
+
+2. 编辑 docker-compose.yml
+
+    您可以在此步, 按需编辑 docker-compose.yml 以符合需要.  
+    通常, 您会希望修改 container_name 字段以避免与其他容器命名冲突, 以及修改暴露的端口. 
+
+3. 启动服务
+
+    ```bash
+    docker-compose up -d
+    ```
+
+</Steps>
+
+## 数据持久化
+
+默认配置为您处理了数据持久化, 除非您希望进一步自定义, 否则您不需要处理相关步骤. 
